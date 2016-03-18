@@ -1,0 +1,32 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "Displays Gridelements Flexform Contents in Page Module.",
+        "emConf": {
+            "category": "module",
+            "custom_category": "",
+            "dependsOn": "typo3 => 7.6.0-7.6.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "beta",
+            "targetVersion": "7.6.0-7.6.99",
+            "version": "1.0"
+        },
+        "extensionKey": "gridelements_ffpagepreview",
+        "name": "Gridelements Flexform Page Preview",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [],
+        "plugins": [],
+        "vendorName": "Ka"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2016-02-24 07:37",
+        "extension_builder_version": "7.6.0",
+        "be_user": "Kevin Lieser (1)"
+    }
+}

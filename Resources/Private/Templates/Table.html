@@ -1,0 +1,49 @@
+
+<!--  
+<table style="margin-top:12px;width:100%;border-collapse:collapse;" class="t3-page-columns t3-grid-table" cellspacing="0" cellpadding="0">
+	
+	<f:for each="{data}" as="singlerow" iteration="itemIteration">
+		<tr>
+			<td style="border-bottom: 1px solid #f0f0f0;padding: 5px 8px 5px 0;" valign="top">{singlerow.layout.TCEforms.label}</td>
+			<td style="width:80%;border-bottom: 1px solid #f0f0f0;padding: 5px 8px 5px 0;" valign="top">{singlerow.value.vDEF}</td>
+		</tr>
+    </f:for>
+	
+	<f:if condition="{dataImages->f:count()} != 0">
+		<tr>
+			<td style="padding: 15px 8px 15px 0;" valign="top" colspan="2">
+				<f:for each="{dataImages}" as="singlerow" iteration="itemIteration">
+					<f:image src="/{singlerow.layout.TCEforms.config.uploadfolder}/{singlerow.value.vDEF}" maxWidth="{imageWidth}" maxHeight="{imageHeight}" />
+				</f:for>
+			</td>
+		</tr>
+	</f:if>
+
+</table>
+-->
+
+
+<table style="margin-top:12px;width:100%;border-collapse:collapse;" class="t3-page-columns t3-grid-table" cellspacing="0" cellpadding="0">
+	
+	<f:for each="{data}" as="singlerow" iteration="itemIteration">
+
+		<f:if condition="{singlerow.layout.TCEforms.config.internal_type} == 'file'">
+			<f:then>
+				<tr>
+					<td style="border-bottom: 1px solid #f0f0f0;padding: 5px 8px 5px 0;" valign="top">{singlerow.layout.TCEforms.label}</td>
+					<td style="width:80%;border-bottom: 1px solid #f0f0f0;padding: 5px 8px 5px 0;" valign="top">
+						<f:image src="/{singlerow.layout.TCEforms.config.uploadfolder}/{singlerow.value.vDEF}" maxWidth="{imageWidth}" maxHeight="{imageHeight}" />
+					</td>
+				</tr>
+			</f:then>
+			<f:else>
+				<tr>
+					<td style="border-bottom: 1px solid #f0f0f0;padding: 5px 8px 5px 0;" valign="top">{singlerow.layout.TCEforms.label}</td>
+					<td style="width:80%;border-bottom: 1px solid #f0f0f0;padding: 5px 8px 5px 0;" valign="top">{singlerow.value.vDEF}</td>
+				</tr>
+			</f:else>
+		</f:if>
+		
+    </f:for>
+
+</table>
