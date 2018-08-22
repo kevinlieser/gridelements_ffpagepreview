@@ -17,6 +17,7 @@ namespace Ka\GridelementsFfpagepreview\Xclass;
 
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Core\Utility\MathUtility;
+use TYPO3\CMS\Backend\View\PageLayoutView;
 
 class DrawItem extends \GridElementsTeam\Gridelements\Hooks\DrawItem
 {
@@ -31,13 +32,14 @@ class DrawItem extends \GridElementsTeam\Gridelements\Hooks\DrawItem
 	 * @param array $row : The current data row for the container item
 	 * @param array $head : The data for the column headers of the grid we are going to render
 	 * @param array $gridContent : The content data of the grid we are going to render
+     * @param PageLayoutView $parentObject
 	 *
 	 * @return string
 	 */
-	public function renderGridLayoutTable($layoutSetup, $row, $head, $gridContent)
+	public function renderGridLayoutTable($layoutSetup, $row, $head, $gridContent, PageLayoutView $parentObject)
 	{
 
-		$grid = parent::renderGridLayoutTable($layoutSetup, $row, $head, $gridContent);
+		$grid = parent::renderGridLayoutTable($layoutSetup, $row, $head, $gridContent, $parentObject);
 
 		// Read TypoScript Settings
 		$this->readSettings($row['pid']);
